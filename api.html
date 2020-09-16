@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MICHA</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+
+ <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+<link href="templatemo_style.css?version=5" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css?version=3" >
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+
+<style>
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+  
+.numbering {
+  max-width: 350px;
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+.numbering li {
+  margin: 0 0 0.5rem 0;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+.numbering li::before {
+  content: counter(my-awesome-counter);
+  color: #fcd000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  transform: rotate(-10deg);
+  background: black;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 1px 1px 0 #999;
+}
+
+
+.isnot{
+
+line-height: 1.7em; padding-top:5px
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;
+}
+</style>
+</head>
+<body>
+<div id="templatemo_wrapper">	
+    <div id="templatemo_site_title_bar">
+  
+        <div id="site_title">
+            <h1><a href="#">
+MICHA API
+<div class="cleaner_h40"></div>
+                <!-- <span>free css templates</span> -->
+            </a></h1>
+        </div>
+            
+        <ul class="social_network">
+            <li><a href="https://twitter.com/NetPharMed" target="_blank"><img src="images/twitter_icon.png" alt="twitter" /></a></li>
+        </ul>
+            
+    </div> <!-- end of templatemo_site_title_bar -->
+    
+    <div id="templatemo_menu">
+    
+        <ul style="padding:0px;padding-left:15px;">
+            <li><a href="index" >Home</a></li>
+            <li><a href="about" >About</a></li>
+            <li><a href="glossary">Glossary</a></li>
+			<li><a href="protocols">Protocols</a></li>
+            <li><a href="#" class="current">API</a></li>
+        </ul>    	
+    
+    </div> <!-- end of templatemo_menu -->
+    
+    <div id="templatemo_search">
+    
+    	<div id="search_box">
+            <form action="#" method="get">
+                <input type="text" value="Enter a keyword..." name="q" size="10" id="searchfield" title="searchfield" onfocus="clearText(this)" onblur="clearText(this)" />
+                <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" />
+            </form>
+        </div>
+    
+    </div> <!-- end of search -->
+    
+    <div id="templatemo_banner">
+
+	    <div id="" style="padding-top:10px;">
+        
+            <p style="
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">&nbsp; MICHA is a protocol for the annotation and reporting of Chemosensitivity assays 
+	by FAIRifying drug sensitivity screening data. It can provide publicly available information for the compounds such as primary targets, 
+	other potent targets, clinical phase and physicochemical properties by inputting standard_inchiKey (either through MICHA website 
+	(http://micha.fimm.fi) or 
+	programmatically by using API (e.g. http://micha.fimm.fi/api/get_targets/XGALLCVXEZPNRQ-UHFFFAOYSA-N).
+</p>
+
+
+
+	     <p style=" padding-top:5px
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">Version: 1.0.0</p>
+     <p style="
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">BasePath:/api</p>
+    <!-- <p style="
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">license: Apache 2.0
+     http://www.apache.org/licenses/LICENSE-2.0.html</p>-->
+    
+
+
+<br>
+            <div class="cleaner_h20"></div>
+            
+        </div>
+        
+      
+        
+    </div> <!-- end of templatemo_banner -->
+
+    <div id="templatemo_content_top"></div>
+    <div id="templatemo_content">
+    
+        <div class="section_w940">
+        
+            <div class="box margin_r30 box_border" style="width: 400px;">
+    
+                <h2>Drug targets</h2>
+            
+			
+			
+              <p align="justify" style="line-height: 1.7em; padding-top:5px
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">
+GET /get_targets/{inchiKey}
+                                        <p align="justify" class="isnot"> 
+Find targets by inchikey
+
+										</p>
+                                        <p align="justify" class="isnot"> 
+Path parameters
+inchiKey (required)
+Path Parameter — targets to be returned
+										</p>
+                                    <p align="justify" class="isnot"> 
+Produces
+This API call produces the following media types according to the Accept request header; the media type will be conveyed by the Content-Type response header.
+application/json
+Responses
+200
+successful operation
+400
+Invalid ID supplied
+404
+not found
+</p>
+						</p>
+                
+              <!--<div class="cleaner_h10"></div>
+                <div class="button_01"><a href="#">More</a></div>-->
+                    
+            </div>
+            
+            <div class="box margin_r30 box_border" style="width: 400px;border-right: 0px dotted #999;">
+    
+                <h2>Annotations</h2>
+              
+              <p align="justify" style="line-height: 1.7em; padding-top:5px
+    letter-spacing: 1px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: black;text-align: justify;">
+	
+	This API endpoint will return annotations for fairified drug screening protocols in MICHA. Input will be standard inchikey and API will return tested cell-lines and experimental settings for input compound (if any)
+
+
+                                        <p align="justify" class="isnot"> 
+GET /annotations/{inchiKey}
+Find drug screening annotations by inchikey
+
+
+										</p>
+                                        <p align="justify" class="isnot"> 
+Path parameters
+inchiKey (required)
+Path Parameter — targets to be returned
+
+										</p>
+                                    <p align="justify" class="isnot"> 
+Produces
+This API call produces the following media types according to the Accept request header; the media type will be conveyed by the Content-Type response header.
+application/json
+</p>
+  
+  
+						
+						</p>	
+                
+                    
+            </div>
+            
+           
+        
+            <div class="cleaner"></div>
+        </div>
+    
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    <div id="templatemo_content_bottom"></div>
+    
+	
+	
+
+	
+        <div id="templatemo_footer">
+
+            <div class="section_w240" style="margin-left: 50px;">
+
+                <h3></h3>
+
+                <div class="sub_content">
+
+                    <ul class="footer_list " style="width:400px;">
+                        <li>
+                            Copyright © 2020 <a style="color:blue;" target="_blank" href="https://www.helsinki.fi/en/researchgroups/network-pharmacology-for-precision-medicine">Netphar</a>
+                            <!-- Credit: www.templatemo.com -->
+
+                        </li>
+                        <li>Email: jing.tang@helsinki.fi</li>
+                    </ul>
+
+                </div>
+
+            </div>
+           
+            <div class="section_w240" style="width:340px;margin-left:50px;">
+
+                <h3>Partners</h3>
+
+                <div class="sub_content">
+
+                    <ul class="footer_list numbering">
+                        <li><a target="_blank" href="https://www.fimm.fi/">Institue For Molecular Medicine, University of Helsinki (FIMM-UH)</a></li>
+                        <li><a target="_blank" href="https://www.imtm.cz/">Institute of Molecular and Translational Medicine (IMTM)</a></li>
+                        <li><a target="_blank" href="https://www.marionegri.it/">Mario Negri Institute for Pharmacological Research (MN)</a></li>
+                        <li><a target="_blank" href="https://eatris.eu/">European Infrastructure for Translational Medicine (EATRIS)</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="section_w240" style="width:120px;">
+
+                <h3>Cool Links</h3>
+
+                <div class="sub_content">
+
+                    <ul class="footer_list ">
+                        <li><a target="_blank" href="https://drugcomb.fimm.fi/" style="color:blue;">DrugComb</a></li>
+                        <li><a target="_blank" href="http://drugtargetcommons.fimm.fi/" style="color:blue;">DrugTargetCommons</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+<div class="cleaner_h40"></div>
+    
+	</div> <!-- end of footer -->
+</div> <!-- end of wrapper -->
+
+</body>
+</html>
